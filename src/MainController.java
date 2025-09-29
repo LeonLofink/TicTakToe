@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class MainController {
     private int[][] array = {
@@ -9,12 +10,18 @@ public class MainController {
 
     public static void main(String[] args) {
         new MainController();
+
     }
 
     public MainController() {
         new Window(this);
         new JFrame();
         System.out.println(findeGroessteZahl());
+        frame.setContentPane(window.getContentPane());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(800, 800));
+        frame.pack();
+        frame.setVisible(true);
     }
     public int findeGroessteZahl(){
         int x = 0;
